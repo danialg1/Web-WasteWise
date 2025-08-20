@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WasteWise - Aplikasi Cerdas Sampah</title>
+    <!-- Menghubungkan ke file CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Menghubungkan ke Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Memuat library Chart.js untuk membuat grafik -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Kontainer utama untuk semua konten -->
+    <div class="container">
+        
+        <!-- ======================= HALAMAN HOME (PENCATATAN) ======================= -->
+        <section id="home-page" class="page active">
+            <header>
+                <div class="logo-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-leaf"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15.5" x2="9.5" y2="7.5"></line></svg>
+                </div>
+                <h1>WasteWise</h1>
+                <p class="subtitle">Catat sampah harianmu, bantu lestarikan bumi.</p>
+            </header>
+            <main>
+                <div class="action-area">
+                    <button id="addButton" class="add-button">
+                        <span class="plus-icon">+</span> Catat Sampah Baru
+                    </button>
+                </div>
+                <div class="list-container">
+                    <h2>Daftar Sampah Tercatat</h2>
+                    <ul id="wasteList">
+                        <li class="empty-state">Belum ada data sampah. Yuk, mulai mencatat!</li>
+                    </ul>
+                </div>
+            </main>
+        </section>
+
+        <!-- ======================= HALAMAN LAPORAN (GRAFIK) ======================= -->
+        <section id="report-page" class="page hidden">
+            <header>
+                <h2>Laporan Sampah</h2>
+                <p class="subtitle">Visualisasi data sampah yang telah kamu catat.</p>
+            </header>
+            <main>
+                <div class="chart-container">
+                    <canvas id="wasteChart"></canvas>
+                </div>
+            </main>
+        </section>
+
+        <!-- ======================= HALAMAN TIPS DAUR ULANG ======================= -->
+        <section id="tips-page" class="page hidden">
+            <header>
+                <h2>Tips Cerdas</h2>
+                <p class="subtitle">Cara mudah mengelola dan mendaur ulang sampah.</p>
+            </header>
+            <main>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h3>♻️ Pilah Sampah</h3>
+                        <p>Pisahkan sampah organik (sisa makanan), anorganik (plastik, kertas), dan B3 (baterai, elektronik) di tempat berbeda.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3>💧 Bersihkan Kemasan</h3>
+                        <p>Sebelum membuang botol atau wadah plastik, bersihkan terlebih dahulu untuk memudahkan proses daur ulang.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3> compost </h3>
+                        <p>Manfaatkan sampah organik seperti sisa sayuran dan buah menjadi kompos untuk menyuburkan tanaman di rumah.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3>🛍️ Kurangi Plastik</h3>
+                        <p>Gunakan tas belanja kain, botol minum, dan sedotan yang bisa dipakai ulang untuk mengurangi sampah plastik sekali pakai.</p>
+                    </div>
+                </div>
+            </main>
+        </section>
+
+    </div>
+
+    <!-- ======================= MENU NAVIGASI BAWAH ======================= -->
+    <nav class="bottom-nav">
+        <button data-page="home-page" class="nav-button active">
+            <span>🏠</span> Home
+        </button>
+        <button data-page="report-page" class="nav-button">
+            <span>📊</span> Laporan
+        </button>
+        <button data-page="tips-page" class="nav-button">
+            <span>💡</span> Tips
+        </button>
+    </nav>
+
+    <!-- Menghubungkan ke file JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
